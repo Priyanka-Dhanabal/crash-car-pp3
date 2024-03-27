@@ -30,7 +30,7 @@ def choose_random_word(list_of_words):
     '''
     return random.choice(list_of_words).upper()
 
-def get_signle_letter():
+def get_single_letter():
     '''
     checks if the user input is valid,
     one letter and a alphabet is provided
@@ -51,8 +51,13 @@ def display_secret_word(word, letters_guessed):
     unknown letter are shown as underscore and guessed letter will be displayed.
     '''
     secret_word = ''
+    for letter in word:
+        if letter in letters_guessed:
+            secret_word+=letter
+        else:
+            secret_word+=("_")
     
-        
+    return secret_word.upper()
 
 
-get_signle_letter()
+print(display_secret_word("ford","f"))
