@@ -10,7 +10,6 @@ def initial_game_rules():
     Requesting user to provide input whether 
     user wants to read the game rules.
     '''
-
     while True:
         user_input = input("Do you want to read the rules for this game? (Y/N) \n").lower()
         if user_input == 'y':
@@ -124,7 +123,9 @@ def play_again():
 
 def main():
     '''
-    
+    Function to call all other functions.
+    start the game with welcome and interacts with the user.
+    Requests user if they want to play again.
     '''
 
 
