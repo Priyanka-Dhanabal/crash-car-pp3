@@ -5,6 +5,8 @@
 import random
 from car_brand import CAR_BRAND
 import welcome
+import time
+import art
 
 def initial_game_rules():
     '''
@@ -14,7 +16,9 @@ def initial_game_rules():
     while True:
         user_input = input("Do you want to read the rules for this game? (Y/N) \n").lower()
         if user_input == 'y':
-            print("rules\n")
+            time.sleep(1)
+            print()
+            welcome.instructions()
             return True
 
         elif user_input == 'n':
@@ -74,7 +78,7 @@ def start_game(word):
     and provide required feedback for bthe user
     '''
 
-    attempts = 7
+    attempts = 6
     guess = False
     letters_guessed = set()
 
@@ -83,17 +87,18 @@ def start_game(word):
     while not guess and attempts > 0:
         letter = get_single_letter()
         if letter in letters_guessed:
-            print(f"You already guessed the letter before. Check out the letters guessed: {letters_guessed}")
-        elif letter in random_word:
+            print(f"You already guessed the letter before.")
+        elif letter in word:
             print(f"Great!!! {letter} that is in the word.")
         else:
             print(f"{letter} is not in the word. TRY AGAIN!\n")
             attempts -= 1
             
         letters_guessed_update(letters_guessed, letter)
-
+        # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
         print(f"You have {attempts} attempts left.\n")
+        print(art.stages[attempts-1])
         print(secret_word)
 
         print(f"Guessed letters are: {', '.join(letters_guessed)}")
@@ -128,12 +133,18 @@ def main():
     start the game with welcome and interacts with the user.
     Requests user if they want to play again.
     '''
+    welcome.welcome_page()
+    time.sleep(1)
+    user_name = input("Enter your name: \n")
+    if user_name == "":
+        user_name = "Champ"
+    print(f"\nHi {user_name.upper()}, ready to PLAY !! ")
+    time.sleep(1)
+    print()
+    initial_game_rules()
+
     random_word = choose_random_word(CAR_BRAND)
-    game = start_game(random_word)
-
-    print(game)
-    play_again()
+    start_game(random_word)
 
 
-
-print(welcome.welcome_page)
+main()
