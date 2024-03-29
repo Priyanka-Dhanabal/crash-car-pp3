@@ -1,4 +1,6 @@
 
+
+
 def welcome_page():
     print("""
         _____                                                                   _____ 
@@ -13,10 +15,6 @@ def welcome_page():
         |___|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|___| 
        (_____)                                                                 (_____)
 
-
-        WELCOME TO CUT-2-CHASE game.
-
-        Coded by Priyanka Dhanabal
 
     """)
 

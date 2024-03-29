@@ -7,6 +7,29 @@ from car_brand import CAR_BRAND
 import welcome
 import time
 import art
+import sys
+import os
+
+def typewriter_effects(text):
+    '''
+    Create typing effect to improve user experience.
+    '''
+    for letter in text:
+        if letter == '\n':
+            print("\n")
+        else:
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+        time.sleep(0.06)
+    print()
+
+
+def clear_screen():
+    '''
+    To clear screen after ever round to enhance user experience
+    '''
+    os.system("clear")
+
 
 def initial_game_rules():
     '''
@@ -27,6 +50,7 @@ def initial_game_rules():
         
         else:
             print("Invalid choice: Please enter 'Y' or 'N'.\n")
+
 
 def choose_random_word(list_of_words):
     '''
@@ -77,7 +101,6 @@ def start_game(word):
     this function manages the game, updates the word status
     and provide required feedback for bthe user
     '''
-
     attempts = 6
     guess = False
     letters_guessed = set()
@@ -110,6 +133,7 @@ def start_game(word):
         print("\nYOU WON..!\n")
     else:
         print(f"\nYOU LOSE..! The word was {word}\n")   
+    
 
 
 def play_again():
@@ -134,17 +158,33 @@ def main():
     Requests user if they want to play again.
     '''
     welcome.welcome_page()
+    typewriter_effects("WELCOME TO CUT-2-CRASH")
+    typewriter_effects("coded by Priyanka\n")
     time.sleep(1)
-    user_name = input("Enter your name: \n")
-    if user_name == "":
-        user_name = "Champ"
-    print(f"\nHi {user_name.upper()}, ready to PLAY !! ")
+    typewriter_effects("You are one the run post heist!")
+    typewriter_effects("Try not to get caught, GOOD LUCK !!\n")
     time.sleep(1)
-    print()
+
+    
+    while True:
+        user_name = input("What is your name? \n")
+        if user_name == "":
+            typewriter_effects("You dont want to disclose your name? lets say 'CHAMP'")
+            user_name = "Champ"
+            break
+        elif not user_name.isalpha():
+            typewriter_effects("We need a valid name!")
+        else:
+            break
+    
+    typewriter_effects(f"\nGREAT!! Hi {user_name.upper().strip()}, ready to DRIVE !! \n")
+    time.sleep(1)
+
     initial_game_rules()
 
     random_word = choose_random_word(CAR_BRAND)
     start_game(random_word)
+
 
 
 main()
