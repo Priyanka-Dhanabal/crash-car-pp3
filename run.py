@@ -4,6 +4,7 @@
 
 import random
 from car_brand import CAR_BRAND
+import welcome
 
 def initial_game_rules():
     '''
@@ -117,7 +118,7 @@ def play_again():
                 return True
             elif user_choice == 'N':
                 return False
-        else:
+        except ValueError:
             print("Invalid choice. Please enter 'Y' or 'N'.")
         
 
@@ -127,12 +128,12 @@ def main():
     start the game with welcome and interacts with the user.
     Requests user if they want to play again.
     '''
+    random_word = choose_random_word(CAR_BRAND)
+    game = start_game(random_word)
+
+    print(game)
+    play_again()
 
 
 
-
-random_word = choose_random_word(CAR_BRAND)
-game = start_game(random_word)
-
-print(game)
-play_again()
+print(welcome.welcome_page)

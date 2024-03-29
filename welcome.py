@@ -1,6 +1,6 @@
 
-def Welcome_page():
-    LOGO = '''
+def welcome_page():
+    print("""
         _____                                                                   _____ 
        ( ___ )                                                                 ( ___ )
         |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | 
@@ -8,25 +8,30 @@ def Welcome_page():
         |   |  / ___| | | |_   _|  |___ \      / ___| | | |  / \  / ___|| ____| |   | 
         |   | | |   | | | | | |_____ __) |____| |   | |_| | / _ \ \___ \|  _|   |   | 
         |   | | |___| |_| | | |_____/ __/_____| |___|  _  |/ ___ \ ___) | |___  |   | 
-        |   |  \____|\___/  |_|    |_____|     \____|_| |_/_/   \_\____/|_____| |   | 
+        |   |  \____|\___/  |_|    |_____|     \____|_| |_/_/   \_\____/|_____| |   |
+        |   |                                                                   |   |
         |___|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|___| 
        (_____)                                                                 (_____)
 
-    WELCOME TO CUT-2-CHASE game
 
-    Coded by Priyanka Dhanabal
+        WELCOME TO CUT-2-CHASE game.
 
-    '''
- 
- def instructions():
-    print("*"*20 + "INSTRUCTIONS" + "*"*20)
-    print("\n")
-    print("""
-    1. You are on a run while the police is chasing. 
-    2. Your goal is to guess the brand of a car within 5 tries.
-    3. Try to guess the car brand and escape! or the police catches you.
+        Coded by Priyanka Dhanabal
+
     """)
-    print("*"*20 + "INSTRUCTIONS" + "*"*20)
+    
+
+ 
+def instructions():
+    print("="*65)
+    print("*" * 25 + " INSTRUCTIONS " + "*" * 25)
+    print("""
+    1. You are on a run while the police are chasing you. 
+    2. Your goal is to guess the brand of a car within 5 tries.
+    3. Try to guess the car brand and escape, or the police will catch you.
+    """)
+    print("*" * 65)
+    print("="*65)
     print("\n")
 
-  
+welcome_page()
