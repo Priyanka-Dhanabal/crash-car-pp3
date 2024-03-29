@@ -107,7 +107,31 @@ def start_game(word):
         print(f"\nYOU LOSE..! The word was {word}\n")   
 
 
+def play_again():
+    '''
+    Function to choose if the user wants to play again or quit the game
+    '''
+    while True:
+        try:
+            user_choice = input("Do you wish to play again? (Y/N) \n").upper()
+            if user_choice == 'Y':
+                return True
+            elif user_choice == 'N':
+                return False
+        else:
+            print("Invalid choice. Please enter 'Y' or 'N'.")
+        
+
+def main():
+    '''
+    
+    '''
+
+
+
+
 random_word = choose_random_word(CAR_BRAND)
 game = start_game(random_word)
 
 print(game)
+play_again()
