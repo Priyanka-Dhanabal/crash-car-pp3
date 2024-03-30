@@ -4,11 +4,12 @@
 
 import random
 from car_brand import CAR_BRAND
-import welcome
+from welcome import *
 import time
 import art
 import sys
 import os
+
 
 def typewriter_effects(text):
     '''
@@ -28,26 +29,29 @@ def clear_screen():
     '''
     To clear screen after ever round to enhance user experience
     '''
-    os.system("clear")
+    typewriter_effects("Enter 'C' to clear the screen")
+    clear = input("\n").lower()
+    if clear == 'c':
+        os.system("clear")
+    
 
 
 def initial_game_rules():
     '''
-    Requesting user to provide input whether 
+    Requesting user to provide input whether
     user wants to read the game rules.
     '''
     while True:
-        user_input = input("Do you want to read the rules for this game? (Y/N) \n").lower()
+        user_input = input("Do you want to read the rules? (Y/N) \n")
+        user_input.lower()
         if user_input == 'y':
             time.sleep(1)
             print()
-            welcome.instructions()
+            instructions()
             return True
-
         elif user_input == 'n':
             print("Lets Start!\n")
             return False
-        
         else:
             print("Invalid choice: Please enter 'Y' or 'N'.\n")
 
@@ -57,6 +61,7 @@ def choose_random_word(list_of_words):
     Selects random word from the list provided.
     '''
     return random.choice(list_of_words).upper()
+
 
 def get_single_letter():
     '''
@@ -70,23 +75,26 @@ def get_single_letter():
             print(f"You have entered: {letter}")
             break
         else:
-            print(f"Only one letter is allowed to be entered and it must be an alphabet or '-'.\nYou entered {letter}. Try again!! \n")
-        
+            print(f"""Only one letter is allowed to be entered.
+            It must be an alphabet or '-'.
+            You entered {letter}. Try again!!""")
     return letter
+
 
 def display_secret_word(word, letters_guessed):
     '''
     Shows the initial state of the word.
-    unknown letter are shown as underscore and guessed letter will be displayed.
+    unknown letter are shown as underscore and
+    guessed letter will be displayed.
     '''
     secret_word = ''
     for letter in word:
         if letter in letters_guessed:
-            secret_word+=letter
+            secret_word += letter
         else:
-            secret_word+=("_")
-    
+            secret_word += ("_")
     return secret_word.upper()
+
 
 def letters_guessed_update(letters_guessed, letter):
     """
@@ -104,36 +112,34 @@ def start_game(word):
     attempts = 6
     guess = False
     letters_guessed = set()
-
+    print(art.stages[attempts-1])
+    print()
     print(display_secret_word(word, letters_guessed))
-
-    while not guess and attempts > 0:
+    while not guess and attempts > 1:
         letter = get_single_letter()
         if letter in letters_guessed:
-            print(f"You already guessed the letter before.")
-        elif letter in word:
-            print(f"Great!!! {letter} that is in the word.")
-        else:
-            print(f"{letter} is not in the word. TRY AGAIN!\n")
+            typewriter_effects(f"You already guessed the letter before.\n")
             attempts -= 1
-            
+            print(art.stages[attempts-1])
+        elif letter in word:
+            typewriter_effects(f"Great!!! {letter} that is in the word.\n")
+        else:
+            typewriter_effects(f"{letter} is not in the word. TRY AGAIN!\n")
+            attempts -= 1
+            print(art.stages[attempts-1])
         letters_guessed_update(letters_guessed, letter)
         # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
-        print(f"You have {attempts} attempts left.\n")
-        print(art.stages[attempts-1])
+        #print(f"You have {attempts} attempts left.\n")
+        
         print(secret_word)
-
         print(f"Guessed letters are: {', '.join(letters_guessed)}")
-
         if word == secret_word:
             guess = True
-        
-    if guess == True:
-        print("\nYOU WON..!\n")
+    if guess:
+        typewriter_effects("\nYOU WON..!\n")
     else:
-        print(f"\nYOU LOSE..! The word was {word}\n")   
-    
+        typewriter_effects(f"\nYOU LOSE..! The word was {word}\n")
 
 
 def play_again():
@@ -149,7 +155,7 @@ def play_again():
                 return False
         except ValueError:
             print("Invalid choice. Please enter 'Y' or 'N'.")
-        
+
 
 def main():
     '''
@@ -157,34 +163,32 @@ def main():
     start the game with welcome and interacts with the user.
     Requests user if they want to play again.
     '''
-    welcome.welcome_page()
+    welcome_page()
     typewriter_effects("WELCOME TO CUT-2-CRASH")
     typewriter_effects("coded by Priyanka\n")
     time.sleep(1)
-    typewriter_effects("You are one the run post heist!")
+    typewriter_effects("You are one the run from a heist!")
     typewriter_effects("Try not to get caught, GOOD LUCK !!\n")
     time.sleep(1)
-
-    
     while True:
         user_name = input("What is your name? \n")
         if user_name == "":
-            typewriter_effects("You dont want to disclose your name? lets say 'CHAMP'")
+            typewriter_effects("""You dont want to disclose your name?\n
+            HMMM... lets say 'CHAMP'""")
             user_name = "Champ"
             break
         elif not user_name.isalpha():
             typewriter_effects("We need a valid name!")
         else:
             break
-    
-    typewriter_effects(f"\nGREAT!! Hi {user_name.upper().strip()}, ready to DRIVE !! \n")
+    typewriter_effects(f"""\nGREAT!! Hi {user_name.upper().strip()},
+    Ready to DRIVE !! \n""")
     time.sleep(1)
-
     initial_game_rules()
-
+    time.sleep(1)
     random_word = choose_random_word(CAR_BRAND)
+    clear_screen()
     start_game(random_word)
-
 
 
 main()
