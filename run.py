@@ -195,7 +195,7 @@ def main():
         start_game(random_word)
         if not play_again():
             typewriter_effects(f"Thanks for playing {user_name}!")
-            sys.exit()
+            sys.exit("Please click Run Program to run again!")
 
 
 main()
