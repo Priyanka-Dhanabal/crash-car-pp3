@@ -42,8 +42,7 @@ def initial_game_rules():
     user wants to read the game rules.
     '''
     while True:
-        user_input = input("Do you want to read the rules? (Y/N) \n")
-        user_input.lower()
+        user_input = input("Do you want to read the rules?(Y/N)\n").lower()
         if user_input == 'y':
             time.sleep(1)
             print()
@@ -70,6 +69,7 @@ def get_single_letter():
     '''
     allowed_letter = 'ABCDEFGHIJKLMNOPQRSTUVWXZY-'
     while True:
+        print()
         letter = input("Please enter a letter: \n").upper()
         if letter in allowed_letter and len(letter) == 1:
             print(f"You have entered: {letter}")
@@ -133,6 +133,7 @@ def start_game(word):
         #print(f"You have {attempts} attempts left.\n")
         
         print(secret_word)
+        print()
         print(f"Guessed letters are: {', '.join(letters_guessed)}")
         if word == secret_word:
             guess = True
@@ -150,7 +151,8 @@ def play_again():
         try:
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
-                return True
+                typewriter_effects("Awesome!, Lets try again.")
+                start_game(random_word)
             elif user_choice == 'N':
                 return False
         except ValueError:
@@ -186,9 +188,12 @@ def main():
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
+    
     random_word = choose_random_word(CAR_BRAND)
     clear_screen()
+
     start_game(random_word)
+    play_again()
 
 
 main()
