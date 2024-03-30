@@ -29,11 +29,12 @@ def clear_screen():
     '''
     To clear screen after ever round to enhance user experience
     '''
-    typewriter_effects("Enter 'C' to clear the screen")
-    clear = input("\n").lower()
-    if clear == 'c':
-        os.system("clear")
-    
+    while True:
+        typewriter_effects("Press C to clear the screen")
+        clear = input("").lower()
+        if clear == 'c':
+            os.system("clear")
+            break 
 
 
 def initial_game_rules():
@@ -49,7 +50,7 @@ def initial_game_rules():
             instructions()
             return True
         elif user_input == 'n':
-            print("Lets Start!\n")
+            print("GOOD, Lets Start!\n")
             return False
         else:
             print("Invalid choice: Please enter 'Y' or 'N'.\n")
@@ -147,12 +148,12 @@ def play_again():
     '''
     Function to choose if the user wants to play again or quit the game
     '''
-    while True:
+    while True:       
         try:
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
                 typewriter_effects("Awesome!, Lets try again.")
-                start_game(random_word)
+                return True
             elif user_choice == 'N':
                 return False
         except ValueError:
@@ -184,16 +185,17 @@ def main():
         else:
             break
     typewriter_effects(f"""\nGREAT!! Hi {user_name.upper().strip()},
-    Ready to DRIVE !! \n""")
+    Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
-    
-    random_word = choose_random_word(CAR_BRAND)
-    clear_screen()
-
-    start_game(random_word)
-    play_again()
+    while True:
+        random_word = choose_random_word(CAR_BRAND)
+        clear_screen()
+        start_game(random_word)
+        if not play_again():
+            typewriter_effects(f"Thanks for playing {user_name}!")
+            sys.exit()
 
 
 main()
