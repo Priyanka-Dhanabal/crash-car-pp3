@@ -167,7 +167,7 @@ def main():
     Requests user if they want to play again.
     '''
     welcome_page()
-    typewriter_effects("WELCOME TO CUT-2-CRASH")
+    typewriter_effects("WELCOME TO CUT-2-CHASE")
     typewriter_effects("coded by Priyanka\n")
     time.sleep(1)
     typewriter_effects("You are one the run from a heist!")
