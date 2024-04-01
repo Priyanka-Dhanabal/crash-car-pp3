@@ -31,10 +31,10 @@ def clear_screen():
     '''
     while True:
         typewriter_effects("Press C to clear the screen")
-        clear = input("").lower()
+        clear = input("\n").lower()
         if clear == 'c':
             os.system("clear")
-            break 
+            break
 
 
 def initial_game_rules():
@@ -50,10 +50,10 @@ def initial_game_rules():
             instructions()
             return True
         elif user_input == 'n':
-            print("GOOD, Lets Start!\n")
+            typewriter_effects("Okay!, Lets Start!\n")
             return False
         else:
-            print("Invalid choice: Please enter 'Y' or 'N'.\n")
+            typewriter_effects("Invalid choice: Please enter 'Y' or 'N'.\n")
 
 
 def choose_random_word(list_of_words):
@@ -93,7 +93,7 @@ def display_secret_word(word, letters_guessed):
         if letter in letters_guessed:
             secret_word += letter
         else:
-            secret_word += ("_")
+            secret_word += (" _ ")
     return secret_word.upper()
 
 
@@ -131,8 +131,7 @@ def start_game(word):
         letters_guessed_update(letters_guessed, letter)
         # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
-        #print(f"You have {attempts} attempts left.\n")
-        
+        # print(f"You have {attempts} attempts left.\n")
         print(secret_word)
         print()
         print(f"Guessed letters are: {', '.join(letters_guessed)}")
@@ -148,7 +147,7 @@ def play_again():
     '''
     Function to choose if the user wants to play again or quit the game
     '''
-    while True:       
+    while True:
         try:
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
@@ -157,7 +156,7 @@ def play_again():
             elif user_choice == 'N':
                 return False
         except ValueError:
-            print("Invalid choice. Please enter 'Y' or 'N'.")
+            typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def main():
@@ -168,7 +167,7 @@ def main():
     '''
     welcome_page()
     typewriter_effects("WELCOME TO CUT-2-CHASE")
-    typewriter_effects("coded by Priyanka\n")
+    typewriter_effects("Coded by Priyanka Dhanabal\n")
     time.sleep(1)
     typewriter_effects("You are one the run from a heist!")
     typewriter_effects("Try not to get caught, GOOD LUCK !!\n")
@@ -176,8 +175,8 @@ def main():
     while True:
         user_name = input("What is your name? \n")
         if user_name == "":
-            typewriter_effects("""You dont want to disclose your name?\n
-            HMMM... lets say 'CHAMP'""")
+            typewriter_effects("""You dont want to disclose your name?
+HMMM... lets say 'CHAMP'""")
             user_name = "Champ"
             break
         elif not user_name.isalpha():
@@ -185,7 +184,7 @@ def main():
         else:
             break
     typewriter_effects(f"""\nGREAT!! Hi {user_name.upper().strip()},
-    Ready to DRIVE !!\n""")
+Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
@@ -194,8 +193,8 @@ def main():
         clear_screen()
         start_game(random_word)
         if not play_again():
-            typewriter_effects(f"Thanks for playing {user_name}!")
-            sys.exit("Please click Run Program to run again!")
+            typewriter_effects(f"Thanks for playing {user_name}!\n")
+            sys.exit("Please click Run Program to Play again!")
 
 
 main()
