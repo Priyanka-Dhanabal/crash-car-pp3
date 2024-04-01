@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+from colorama import Fore
 import random
 from car_brand import CAR_BRAND
 from welcome import *
@@ -113,7 +114,8 @@ def start_game(word):
     attempts = 6
     guess = False
     letters_guessed = set()
-    print(art.stages[attempts-1])
+    print(Fore.YELLOW + art.stages[attempts-1])
+    print(Fore.RESET)
     print()
     print(display_secret_word(word, letters_guessed))
     while not guess and attempts > 1:
@@ -121,13 +123,15 @@ def start_game(word):
         if letter in letters_guessed:
             typewriter_effects(f"You already guessed the letter before.\n")
             attempts -= 1
-            print(art.stages[attempts-1])
+            print(Fore.YELLOW + art.stages[attempts-1])
+            print(Fore.RESET)
         elif letter in word:
             typewriter_effects(f"Great!!! {letter} that is in the word.\n")
         else:
             typewriter_effects(f"{letter} is not in the word. TRY AGAIN!\n")
             attempts -= 1
-            print(art.stages[attempts-1])
+            print(Fore.YELLOW + art.stages[attempts-1])
+            print(Fore.RESET)
         letters_guessed_update(letters_guessed, letter)
         # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
@@ -138,9 +142,11 @@ def start_game(word):
         if word == secret_word:
             guess = True
     if guess:
-        typewriter_effects("\nYOU WON..!\n")
+        typewriter_effects(Fore.GREEN + "\nYOU WON..!\n")
+        print(Fore.RESET)
     else:
-        typewriter_effects(f"\nYOU LOSE..! The word was {word}\n")
+        typewriter_effects(Fore.RED + f"\nYOU LOSE..! The word was {word}\n")
+        print(Fore.RESET)
 
 
 def play_again():
@@ -166,6 +172,7 @@ def main():
     Requests user if they want to play again.
     '''
     welcome_page()
+    print(Fore.RESET)
     typewriter_effects("WELCOME TO CUT-2-CHASE")
     typewriter_effects("Coded by Priyanka Dhanabal\n")
     time.sleep(1)

@@ -1,3 +1,4 @@
+from colorama import Fore
 stages = [
     r'''
                 **YOU ARE UNDER ARREST** ______---()---___
@@ -54,3 +55,4 @@ stages = [
     _____\_/________\_/_______
     '''
 ]
+

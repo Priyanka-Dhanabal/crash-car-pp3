@@ -1,5 +1,7 @@
+from colorama import Fore
+
 def welcome_page():
-    print(r"""
+    print(Fore.CYAN + r"""
      _____                                                             _____
     ( ___ )                                                           ( ___ )
      |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   |
