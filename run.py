@@ -1,6 +1,6 @@
 from colorama import Fore
 import random
-from car_brand import CAR_BRAND
+from constant import CAR_BRAND, MAX_ATTEPMTS
 from welcome import *
 import time
 import art
@@ -99,7 +99,7 @@ def start_game(word):
     this function manages the game, updates the word status
     and provide required feedback for bthe user
     '''
-    attempts = 6
+    attempts = MAX_ATTEPMTS
     guess = False
     letters_guessed = set()
     print(Fore.YELLOW + art.stages[attempts-1])
@@ -121,12 +121,11 @@ def start_game(word):
             print(Fore.YELLOW + art.stages[attempts-1])
             print(Fore.RESET)
         letters_guessed.add(letter)
-        # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
-        # print(f"You have {attempts} attempts left.\n")
         print(secret_word)
         print()
         print(f"Guessed letters are: {', '.join(letters_guessed)}")
+        print(f"You have {attempts-1} attempts left.\n")
         if word == secret_word:
             guess = True
     if guess:
@@ -182,13 +181,13 @@ def take_user_name_input():
     return user_name
 
 
-def init_game():
+def init_game(username):
     while True:
         random_word = choose_random_word(CAR_BRAND)
         clear_screen()
         start_game(random_word)
         if not play_again():
-            typewriter_effects(f"Thanks for playing {user_name}!\n")
+            typewriter_effects(f"Thanks for playing {username}!\n")
             sys.exit("Please click Run Program to Play again!")
 
 
@@ -205,7 +204,7 @@ Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
-    init_game()
+    init_game(user_name)
 
 
 main()

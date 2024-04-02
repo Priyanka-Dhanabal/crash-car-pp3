@@ -50,3 +50,5 @@ CAR_BRAND = [
     'Datsun',
     'SsangYong',
 ]
+
+MAX_ATTEPMTS = 6
