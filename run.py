@@ -1,7 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 from colorama import Fore
 import random
 from car_brand import CAR_BRAND
@@ -78,8 +74,8 @@ def get_single_letter():
             break
         else:
             print(f"""Only one letter is allowed to be entered.
-            It must be an alphabet or '-'.
-            You entered {letter}. Try again!!""")
+    It must be an alphabet or '-'.
+    You entered {letter}. Try again!!""")
     return letter
 
 
@@ -96,14 +92,6 @@ def display_secret_word(word, letters_guessed):
         else:
             secret_word += (" _ ")
     return secret_word.upper()
-
-
-def letters_guessed_update(letters_guessed, letter):
-    """
-    This functions add two args the guess that the player guessed so far
-    to the set of guessed letters.
-    """
-    letters_guessed.add(letter)
 
 
 def start_game(word):
@@ -132,7 +120,7 @@ def start_game(word):
             attempts -= 1
             print(Fore.YELLOW + art.stages[attempts-1])
             print(Fore.RESET)
-        letters_guessed_update(letters_guessed, letter)
+        letters_guessed.add(letter)
         # print(f"Check out the letters guessed: {letters_guessed}")
         secret_word = display_secret_word(word, letters_guessed)
         # print(f"You have {attempts} attempts left.\n")
@@ -165,12 +153,10 @@ def play_again():
             typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
 
 
-def main():
-    '''
-    Function to call all other functions.
-    start the game with welcome and interacts with the user.
-    Requests user if they want to play again.
-    '''
+def show_welcome_msg():
+    """
+    Display LOGO and initial welcome messages.
+    """
     welcome_page()
     print(Fore.RESET)
     typewriter_effects("WELCOME TO CUT-2-CHASE")
@@ -179,17 +165,31 @@ def main():
     typewriter_effects("You are one the run from a heist!")
     typewriter_effects("Try not to get caught, GOOD LUCK !!\n")
     time.sleep(1)
+
+
+def take_user_name_input():
+    user_name = ''
     while True:
         user_name = input("What is your name? \n")
         if user_name == "":
-            typewriter_effects("""You dont want to disclose your name?
-HMMM... lets say 'CHAMP'""")
+            typewriter_effects("You dont want to disclose your name?\n")
+            typewriter_effects("HMMM... lets say 'CHAMP'")
             user_name = "Champ"
             break
         elif not user_name.isalpha():
             typewriter_effects("We need a valid name!")
         else:
             break
+    return user_name
+
+def main():
+    '''
+    Function to call all other functions.
+    start the game with welcome and interacts with the user.
+    Requests user if they want to play again.
+    '''
+    show_welcome_msg()
+    user_name = take_user_name_input()
     typewriter_effects(f"""\nGREAT!! Hi {user_name.upper().strip()},
 Ready to DRIVE !!\n""")
     time.sleep(1)
@@ -205,3 +205,4 @@ Ready to DRIVE !!\n""")
 
 
 main()
+
