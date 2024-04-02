@@ -182,6 +182,15 @@ def take_user_name_input():
             break
     return user_name
 
+def init_game():
+    while True:
+        random_word = choose_random_word(CAR_BRAND)
+        clear_screen()
+        start_game(random_word)
+        if not play_again():
+            typewriter_effects(f"Thanks for playing {user_name}!\n")
+            sys.exit("Please click Run Program to Play again!")
+
 def main():
     '''
     Function to call all other functions.
@@ -195,13 +204,7 @@ Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
-    while True:
-        random_word = choose_random_word(CAR_BRAND)
-        clear_screen()
-        start_game(random_word)
-        if not play_again():
-            typewriter_effects(f"Thanks for playing {user_name}!\n")
-            sys.exit("Please click Run Program to Play again!")
+    init_game()
 
 
 main()
