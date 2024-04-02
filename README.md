@@ -1,11 +1,11 @@
 # CUT-2-CHASE
 ### Overview
-'CUT-2-CHASE' is a Python terminal game where the word that has to be guessed is all about car brands all over the world. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must enter one letter at a time and guess the word to win the game. I love playing hangman games but I wanted to give my touch to the game. Hence, I came up with a cut-2-chase. Where the theme is all about the user is on the drive after a heist and a police car is chasing them. The user has to find the word before the police car catches up(this is represented on the terminal to have a better user experience.).
+'CUT-2-CHASE' is a Python terminal game where the word that has to be guessed is all about car brands worldwide. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must enter one letter at a time and guess the word to win the game. I love playing hangman games but I wanted to give my touch to the game. Hence, I came up with cut-2-chase. Backstory: The user is on the drive after a heist and a police car is chasing them. The user has to find the word before the police car catches up(this is represented on the terminal to have a better user experience.).
 
-![Responsive Image]()
+![Responsive Image](assets/readme_images/amiresponsive.png)
 ### - By Priyanka Dhanabal
-The live version of the project can be viewed [here]()
-You can check out my Repository [here]()
+The live version of the project can be viewed [here](https://cut-2-chase-pp3-fa8e87cba1b5.herokuapp.com/)
+You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/cut-2-chase-pp3)
 
 ## Table of contents
  1. [ UX ](#ux)
@@ -34,7 +34,7 @@ To provide a simple and fun platform where the user can try to guess a car brand
 - I want to be able to build an easy app for the users to play a game.
 - I want to be able to provide the necessary message for the user on every user input.
 ### Flowcharts
-![Flowcharts]()
+![Flowcharts](assets/readme_images/flowchart.png)
 
 [Back to top](#table-of-contents)
 
@@ -48,9 +48,13 @@ To provide a simple and fun platform where the user can try to guess a car brand
  **Languages Used**
 - Python
 
-**Python Packages**
+**Python Packages/ Libraries Used**
+I used the following libraries and modules:
 - Random: (choice) returns a random word from a list of words.
 - Time: defined time sleep
+- Colorama: (Fore) to apply different color to texts
+- OS
+- Sys
 
 ## Testing
 
