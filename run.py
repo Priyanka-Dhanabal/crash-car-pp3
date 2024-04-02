@@ -74,8 +74,8 @@ def get_single_letter():
             print(f"You have entered: {letter}")
             break
         else:
-            print(f"*Only one letter is allowed to be entered.")
-            print("It must be an alphabet or '-', Try again !")
+            print(f"""*Only one letter is allowed to be entered.
+It must be an alphabet or '-', Try again !*""")
     return letter
 
 
@@ -166,6 +166,9 @@ def show_welcome_msg():
 
 
 def take_user_name_input():
+    '''
+    Function to request and check a user's name and return it.
+    '''
     user_name = ''
     while True:
         user_name = input("What is your name? \n")
@@ -182,6 +185,11 @@ def take_user_name_input():
 
 
 def init_game(username):
+    '''
+    Function to generate a random word and provide it
+    to the start game function. Also displays if user 
+    wish to play again and exits.
+    '''
     while True:
         random_word = choose_random_word(CAR_BRAND)
         clear_screen()
@@ -194,8 +202,6 @@ def init_game(username):
 def main():
     '''
     Function to call all other functions.
-    start the game with welcome and interacts with the user.
-    Requests user if they want to play again.
     '''
     show_welcome_msg()
     user_name = take_user_name_input()
