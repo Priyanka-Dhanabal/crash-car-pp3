@@ -28,7 +28,7 @@ def clear_screen():
     '''
     while True:
         typewriter_effects("Press C to clear the screen")
-        clear = input("\n").lower()
+        clear = input("").lower()
         if clear == 'c':
             os.system("clear")
             break
@@ -47,7 +47,8 @@ def initial_game_rules():
             instructions()
             return True
         elif user_input == 'n':
-            typewriter_effects("Okay!, Lets Start!\n")
+            typewriter_effects("Okay!, Lets Start!")
+            typewriter_effects("Remember: secret word is based on Car Brands")
             return False
         else:
             typewriter_effects("Invalid choice: Please enter 'Y' or 'N'.\n")
@@ -73,9 +74,8 @@ def get_single_letter():
             print(f"You have entered: {letter}")
             break
         else:
-            print(f"""Only one letter is allowed to be entered.
-    It must be an alphabet or '-'.
-    You entered {letter}. Try again!!""")
+            print(f"*Only one letter is allowed to be entered.")
+            print("It must be an alphabet or '-', Try again !")
     return letter
 
 
@@ -158,11 +158,10 @@ def show_welcome_msg():
     Display LOGO and initial welcome messages.
     """
     welcome_page()
-    print(Fore.RESET)
     typewriter_effects("WELCOME TO CUT-2-CHASE")
     typewriter_effects("Coded by Priyanka Dhanabal\n")
     time.sleep(1)
-    typewriter_effects("You are one the run from a heist!")
+    typewriter_effects("You are on the run from a heist!")
     typewriter_effects("Try not to get caught, GOOD LUCK !!\n")
     time.sleep(1)
 
@@ -182,6 +181,7 @@ def take_user_name_input():
             break
     return user_name
 
+
 def init_game():
     while True:
         random_word = choose_random_word(CAR_BRAND)
@@ -190,6 +190,7 @@ def init_game():
         if not play_again():
             typewriter_effects(f"Thanks for playing {user_name}!\n")
             sys.exit("Please click Run Program to Play again!")
+
 
 def main():
     '''
@@ -208,4 +209,3 @@ Ready to DRIVE !!\n""")
 
 
 main()
-
