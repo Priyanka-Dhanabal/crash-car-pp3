@@ -31,7 +31,7 @@ def clear_screen():
         clear = input("").lower()
         if clear == 'c':
             time.sleep(1)
-            os.system("clear")
+            os.system('cls||clear')
             break
 
 
