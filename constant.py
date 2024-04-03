@@ -69,5 +69,5 @@ LOST = r"""
     ║                                ║
     ╚════════════════════════════════╝
     """
-
+# defines the maximum attepmts the user can play
 MAX_ATTEPMTS = 6
