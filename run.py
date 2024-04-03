@@ -30,8 +30,7 @@ def clear_screen():
         typewriter_effects("Press C to clear the screen")
         clear = input("").lower()
         if clear == 'c':
-            time.sleep(1)
-            os.system('cls||clear')
+            os.system('clear')
             break
 
 
@@ -148,7 +147,7 @@ def play_again():
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
                 typewriter_effects("Awesome!, Lets try again.")
-                clear_screen()
+                print("\033c")
                 return True
             elif user_choice == 'N':
                 return False
