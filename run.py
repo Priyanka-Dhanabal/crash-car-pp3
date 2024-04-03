@@ -129,26 +129,23 @@ def start_game(word):
         if word == secret_word:
             guess = True
     if guess:
-        typewriter_effects(Fore.GREEN + "\nYOU WON..!\n")
-        print(Fore.RESET)
+        print(Fore.GREEN + f"{win}\n")
     else:
-        typewriter_effects(Fore.RED + f"\nYOU LOSE..! The word was {word}\n")
-        print(Fore.RESET)
-
+        print(Fore.RED + f"{lost}\nThe word was {word}\n")
+    print(Fore.RESET)
 
 def play_again():
     '''
     Function to choose if the user wants to play again or quit the game
     '''
     while True:
-        try:
-            user_choice = input("Do you wish to play again? (Y/N) \n").upper()
-            if user_choice == 'Y':
-                typewriter_effects("Awesome!, Lets try again.")
-                return True
-            elif user_choice == 'N':
-                return False
-        except ValueError:
+        user_choice = input("Do you wish to play again? (Y/N) \n").upper()
+        if user_choice == 'Y':
+            typewriter_effects("Awesome!, Lets try again.")
+            return True
+        elif user_choice == 'N':
+            return False
+        else:
             typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
 
 
