@@ -215,7 +215,7 @@ Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
-    clear_screen()
+    print("\033c")
     init_game(user_name)
 
 
