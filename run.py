@@ -49,7 +49,7 @@ def initial_game_rules():
                 return True
             elif user_input == 'n':
                 typewriter_effects("Okay!, Lets Start!")
-                typewriter_effects("Remember: secret word is based on Car Brands\n")
+                typewriter_effects("Remember: Words are based on Car Brands\n")
                 return False
             else:
                 raise ValueError
@@ -137,6 +137,7 @@ def start_game(word):
         print(Fore.RED + f"{LOST}\nThe word was {word}\n")
     print(Fore.RESET)
 
+
 def play_again():
     '''
     Function to choose if the user wants to play again or quit the game
@@ -190,7 +191,7 @@ def take_user_name_input():
 def init_game(username):
     '''
     Function to generate a random word and provide it
-    to the start game function. Also displays if user 
+    to the start game function. Also displays if user
     wish to play again and exits.
     '''
     while True:
