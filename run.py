@@ -194,7 +194,6 @@ def init_game(username):
     to the start game function. Also displays if user
     wish to play again and exits.
     '''
-    clear_screen()
     while True:
         random_word = choose_random_word(CAR_BRAND)
         start_game(random_word)
@@ -214,6 +213,7 @@ Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
+    clear_screen()
     init_game(user_name)
 
 
