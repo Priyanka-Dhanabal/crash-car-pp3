@@ -5,7 +5,6 @@ from welcome import *
 import time
 import art
 import sys
-import os
 
 
 def typewriter_effects(text):
@@ -30,7 +29,7 @@ def clear_screen():
         typewriter_effects("Press C to clear the screen")
         clear = input("").lower()
         if clear == 'c':
-            os.system('clear')
+            print("\033c")
             break
 
 
@@ -147,7 +146,7 @@ def play_again():
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
                 typewriter_effects("Awesome!, Lets try again.")
-                print("\033c")
+                clear_screen()
                 return True
             elif user_choice == 'N':
                 return False
@@ -215,7 +214,7 @@ Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
     time.sleep(1)
-    print("\033c")
+    clear_screen()
     init_game(user_name)
 
 
