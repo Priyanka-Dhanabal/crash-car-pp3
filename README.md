@@ -1,10 +1,14 @@
 # CUT-2-CHASE
+
+![Responsive Image](assets/readme_images/amiresponsive.png)
+
 ### Overview
 'CUT-2-CHASE' is a Python terminal game where the word that has to be guessed is all about car brands worldwide. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must enter one letter at a time and guess the word to win the game. I love playing hangman games but I wanted to give my touch to the game. Hence, I came up with cut-2-chase. Backstory: The user is on the drive after a heist and a police car is chasing them. The user has to find the word before the police car catches up(this is represented on the terminal to have a better user experience.).
 
-![Responsive Image](assets/readme_images/amiresponsive.png)
 ### - By Priyanka Dhanabal
+
 The live version of the project can be viewed [here](https://cut-2-chase-pp3-fa8e87cba1b5.herokuapp.com/)
+
 You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/cut-2-chase-pp3)
 
 ## Table of contents
@@ -33,11 +37,19 @@ To provide a simple and fun platform where the user can try to guess a car brand
 #### As the site administrator:
 - I want to be able to build an easy app for the users to play a game.
 - I want to be able to provide the necessary message for the user on every user input.
+
+### Design
+
+
+
 ### Flowcharts
 ![Flowcharts](assets/readme_images/flowchart.png)
 
 [Back to top](#table-of-contents)
 
+## Features
+
+## Future Features
 
 ## Technologies Used
 - **Git** Used to version control throughout my project and to ensure that a clean record is maintained.
