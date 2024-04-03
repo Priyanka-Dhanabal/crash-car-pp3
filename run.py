@@ -147,6 +147,7 @@ def play_again():
             user_choice = input("Do you wish to play again? (Y/N) \n").upper()
             if user_choice == 'Y':
                 typewriter_effects("Awesome!, Lets try again.")
+                clear_screen()
                 return True
             elif user_choice == 'N':
                 return False
@@ -154,6 +155,7 @@ def play_again():
                 raise ValueError
         except ValueError:
             typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
+        
 
 
 def show_welcome_msg():

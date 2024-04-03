@@ -53,6 +53,7 @@ I used flowchart to plan out the code.
 ## Features
 
 - At the start of the game - Welcomes the player and request the player's name.
+
 ![Welcome page](assets/readme_images/welcome.png)
 
 - Ask if the player wants to read the rules. Displays the message respectively.
@@ -73,9 +74,11 @@ I used flowchart to plan out the code.
 
 ![correct letter](assets/readme_images/correct_letter.png)
 
-- If the letter is not in the word or if the letter is repeated, the next stage is shown with all the updated details.
+- If the letter is not in the word or if the letter is repeated, the number of attempts is reduced by 1 and the next stage is shown with all the updated details.
 
 ![wrong letter1](assets/readme_images/Stage23.png)
+
+
 ![wrong letter2](assets/readme_images/stage45.png)
 
 
