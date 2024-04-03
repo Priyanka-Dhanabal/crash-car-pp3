@@ -29,7 +29,8 @@ def clear_screen():
         typewriter_effects("Press C to clear the screen")
         clear = input("").lower()
         if clear == 'c':
-            print("\033c")
+            sys.stdout.write("\033c")
+            sys.stdout.flush()
             break
 
 
@@ -154,7 +155,6 @@ def play_again():
                 raise ValueError
         except ValueError:
             typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
-        
 
 
 def show_welcome_msg():
