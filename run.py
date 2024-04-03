@@ -194,9 +194,9 @@ def init_game(username):
     to the start game function. Also displays if user
     wish to play again and exits.
     '''
+    clear_screen()
     while True:
         random_word = choose_random_word(CAR_BRAND)
-        clear_screen()
         start_game(random_word)
         if not play_again():
             typewriter_effects(f"Thanks for playing {username}!\n")

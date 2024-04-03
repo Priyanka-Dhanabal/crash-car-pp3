@@ -43,15 +43,60 @@ To provide a simple and fun platform where the user can try to guess a car brand
 
 
 ### Flowcharts
+
+I used flowchart to plan out the code.
+
 ![Flowcharts](assets/readme_images/flowchart.png)
 
 [Back to top](#table-of-contents)
 
 ## Features
 
+- At the start of the game - Welcomes the player and request the player's name.
+![Welcome page](assets/readme_images/welcome.png)
+
+- Ask if the player wants to read the rules. Displays the message respectively.
+
+![instructions](assets/readme_images/rules.png)
+
+- Users can clear the screen before the game starts.
+
+- There are 5 attempts in total.
+
+- Initially game displays a Car and hidden word in the form of underscores.
+
+![stage one](assets/readme_images/stage1.png)
+
+- If the letter is typed and the letter is in the hidden word, the hidden word is updated and displayed.
+
+- Along with the hidden word, guessed letters are displayed and the number of remaining attempts is displayed.
+
+![correct letter](assets/readme_images/correct_letter.png)
+
+- If the letter is not in the word or if the letter is repeated, the next stage is shown with all the updated details.
+
+![wrong letter1](assets/readme_images/Stage23.png)
+![wrong letter2](assets/readme_images/stage45.png)
+
+
+![repeated letter](assets/readme_images/repeated_letter.png)
+
+- When the number of remaining attempts becomes zero, the game ends displaying the text you lost in ASCII art with the hidden letter.
+
+![result in acsii art](assets/readme_images/result_acsii.png)
+
+- Users can choose to play again or quit.
+
+![Play again](assets/readme_images/play_again.png)
+
 ## Future Features
+Due to time constraints, I wasn't able to add these features, but I would in the future.
+
+- A score board.
+- An ability to guess the whole word, if the user knows it.
 
 ## Technologies Used
+
 - **Git** Used to version control throughout my project and to ensure that a clean record is maintained.
 - **GitHub**  Used to store the project's code after being pushed from Git
 - **Heroku** Used to deploy the live project
@@ -70,13 +115,37 @@ I used the following libraries and modules:
 
 ## Testing
 
-#### 
-Using [CI Python Linter](https://pep8ci.herokuapp.com/): Validator Service was used to validate every Python file in the project to ensure there were no syntax errors in the project.
+I have been testing the code many times in my local terminal and on the Heroku site.
 
-#### Lighthouse
+| Input  | Status |
+|--|--|
+|User receiving a response if Name was not valid.| True |
+|If a user chooses not to give a name, the default name has been taken| True |
+|User can choose if rules are to be viewed or not | True |
+|Game instructions are displayed or skipped with respective to user choice  | True |
+|Game instructions are displayed or skipped with respective to user choice  | True |
+|User receives all necessary information while playing the game | True |
+|User can view result - Won / Lost and the secret word | True |
+|User can play again | True |
+|User can Quit the game| True |
 
-#### Functionality
+![Name input related]()
 
+![Game instructions related]()
+
+![Game related]()
+
+![Play again]()
+
+![Quit]()
+
+#### Validations
+
+Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate if all the Python files follow the PEP8 style guide.
+
+![PEP8 CI]()
+
+No errors were found.
 
 ## Deployment
 
