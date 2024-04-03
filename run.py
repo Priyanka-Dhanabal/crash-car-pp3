@@ -1,6 +1,6 @@
 from colorama import Fore
 import random
-from constant import CAR_BRAND, MAX_ATTEPMTS
+from constant import *
 from welcome import *
 import time
 import art
@@ -18,7 +18,7 @@ def typewriter_effects(text):
         else:
             sys.stdout.write(letter)
             sys.stdout.flush()
-        time.sleep(0.06)
+            time.sleep(0.06)
     print()
 
 
@@ -40,17 +40,20 @@ def initial_game_rules():
     user wants to read the game rules.
     '''
     while True:
-        user_input = input("Do you want to read the rules?(Y/N)\n").lower()
-        if user_input == 'y':
-            time.sleep(1)
-            print()
-            instructions()
-            return True
-        elif user_input == 'n':
-            typewriter_effects("Okay!, Lets Start!")
-            typewriter_effects("Remember: secret word is based on Car Brands")
-            return False
-        else:
+        try:
+            user_input = input("Do you want to read the rules?(Y/N)\n").lower()
+            if user_input == 'y':
+                time.sleep(1)
+                print()
+                instructions()
+                return True
+            elif user_input == 'n':
+                typewriter_effects("Okay!, Lets Start!")
+                typewriter_effects("Remember: secret word is based on Car Brands\n")
+                return False
+            else:
+                raise ValueError
+        except ValueError:
             typewriter_effects("Invalid choice: Please enter 'Y' or 'N'.\n")
 
 
@@ -129,9 +132,9 @@ def start_game(word):
         if word == secret_word:
             guess = True
     if guess:
-        print(Fore.GREEN + f"{win}\n")
+        print(Fore.GREEN + f"{WIN}\n The word was {word}\n")
     else:
-        print(Fore.RED + f"{lost}\nThe word was {word}\n")
+        print(Fore.RED + f"{LOST}\nThe word was {word}\n")
     print(Fore.RESET)
 
 def play_again():
@@ -139,13 +142,16 @@ def play_again():
     Function to choose if the user wants to play again or quit the game
     '''
     while True:
-        user_choice = input("Do you wish to play again? (Y/N) \n").upper()
-        if user_choice == 'Y':
-            typewriter_effects("Awesome!, Lets try again.")
-            return True
-        elif user_choice == 'N':
-            return False
-        else:
+        try:
+            user_choice = input("Do you wish to play again? (Y/N) \n").upper()
+            if user_choice == 'Y':
+                typewriter_effects("Awesome!, Lets try again.")
+                return True
+            elif user_choice == 'N':
+                return False
+            else:
+                raise ValueError
+        except ValueError:
             typewriter_effects("Invalid choice. Please enter 'Y' or 'N'.")
 
 
@@ -168,9 +174,9 @@ def take_user_name_input():
     '''
     user_name = ''
     while True:
-        user_name = input("What is your name? \n")
+        user_name = input("What is your name?\n")
         if user_name == "":
-            typewriter_effects("You dont want to disclose your name?\n")
+            typewriter_effects("You dont want to disclose your name?")
             typewriter_effects("HMMM... lets say 'CHAMP'")
             user_name = "Champ"
             break
@@ -202,7 +208,7 @@ def main():
     '''
     show_welcome_msg()
     user_name = take_user_name_input()
-    typewriter_effects(f"""\nGREAT!! Hi {user_name.upper().strip()},
+    typewriter_effects(f"""GREAT!! Hi {user_name.upper().strip()},
 Ready to DRIVE !!\n""")
     time.sleep(1)
     initial_game_rules()
