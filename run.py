@@ -30,7 +30,7 @@ def clear_screen():
         typewriter_effects("Press C to clear the screen")
         clear = input("").lower()
         if clear == 'c':
-            os.system("clear")
+            os.system("cls")
             break
 
 
