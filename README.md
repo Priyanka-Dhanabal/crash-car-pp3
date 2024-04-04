@@ -67,6 +67,8 @@ I used flowchart to plan out the code.
 
 	GOOD LUCK!
 
+[Back to top](#table-of-contents)
+
 ## Features
 
 - At the start of the game - Welcomes the player and request the player's name.
