@@ -1,7 +1,13 @@
+# This file will be imported into run file.
 from colorama import Fore
 
 
 def welcome_page():
+    '''
+    this will function will be imported in run file
+    and will be called. Viewd as Logo while program
+    is run.
+    '''
     print(Fore.CYAN + r"""
     ╔══════════════════════════════════════════════╗
     ║                                              ║
@@ -15,6 +21,10 @@ def welcome_page():
 
 
 def instructions():
+    '''
+    This function will print the instructing when it is
+    called in run file.
+    '''
     print("""
     ╔═════════════════════════════════════════════════════════════════════╗
     ║                         INSTRUCTIONS:                               ║

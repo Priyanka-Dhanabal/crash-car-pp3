@@ -1,3 +1,6 @@
+# This file will contain all constants
+# This file will be imported into run file.
+
 CAR_BRAND = [
     "Toyota",
     "Honda",

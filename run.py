@@ -1,3 +1,4 @@
+# importing python libraries and methods.
 from colorama import Fore
 import random
 from constant import *

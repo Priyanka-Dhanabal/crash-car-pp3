@@ -1,4 +1,6 @@
-from colorama import Fore
+# This file will be imported into run file.
+# This file contains ASCII art of stages.
+
 stages = [
     r'''
                 **YOU ARE UNDER ARREST** ______---()---___
