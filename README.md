@@ -152,9 +152,7 @@ I have been testing the code many times in my local terminal and on the Heroku s
 ![Game instructions related](assets/readme_images/rules_error.png)
 
 - The player can input only one alphabet at a time. If any number, special characters, more that 1 letter or enter without any input, player receives a prompt stating that "Only one letter is allowed to be entered.
-It must be an alphabet or '-', Try again !"
-
-- Some Car brands are made of two words so, "-" is placed between them.
+It must be an alphabet, Try again !"
 
 ![Game related](assets/readme_images/game_error.png)
 

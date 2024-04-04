@@ -69,7 +69,7 @@ def get_single_letter():
     requests and checks if the user input is valid,
     one letter and if alphabet is provided
     '''
-    allowed_letter = 'ABCDEFGHIJKLMNOPQRSTUVWXZY-'
+    allowed_letter = 'ABCDEFGHIJKLMNOPQRSTUVWXZY'
     while True:
         print()
         letter = input("Please enter a letter: \n").upper()
@@ -78,7 +78,7 @@ def get_single_letter():
             break
         else:
             print(f"""*Only one letter is allowed to be entered.
-It must be an alphabet or '-', Try again !*""")
+It must be an alphabet, Try again !*""")
     return letter
 
 
