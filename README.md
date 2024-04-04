@@ -3,7 +3,7 @@
 ![Responsive Image](assets/readme_images/amiresponsive.png)
 
 ### Overview
-'CUT-2-CHASE' is a Python terminal game where the word that has to be guessed is all about car brands worldwide. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must enter one letter at a time and guess the word to win the game. I love playing hangman games but I wanted to give my touch to the game. Hence, I came up with cut-2-chase. Backstory: The player is on the drive after a heist and a police car is chasing them. The player has to find the word before the police car catches up(this is represented on the terminal to have a better user experience.).
+'CUT-2-CHASE' is a Python terminal game where the word that has to be guessed and is all about car brands worldwide. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must enter one letter at a time and guess the word to win the game. I love playing hangman games but I wanted to give my touch to the game. Hence, I came up with cut-2-chase. Backstory: The player is on the drive after a heist and a police car is chasing them. The player has to find the word before the police car catches up(this is represented on the terminal to have a better user experience.).
 
 ### - By Priyanka Dhanabal
 
@@ -16,6 +16,7 @@ You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/cut-
 	- [Site Goal](#site-goal)
 	- [User Stories](#user-stories)
 	- [Flowcharts](#flowcharts)
+ 2. [How to play](#how-to-play)
  2. [ Features ](#features)
  3. [ Future Feature ](#future-features)
  4. [ Technology used ](#technologies-used)
@@ -54,6 +55,17 @@ I used flowchart to plan out the code.
 ![Flowcharts](assets/readme_images/flowchart.png)
 
 [Back to top](#table-of-contents)
+
+## How to Play
+1. Initially game starts with a Car and hidden word represented in underscores.
+2. Player can choose a letter(Only Aphabets) and have 5 attempts total.
+3. If the letter is in the hidden word, player doesnot lose any attempts and can continue playing. Now the hidden word will be updated with the letter replaced in it.
+4. If the letter is not in the hidden word, player looses 1 attempt and now will be able to see a police car chasing behind the car(ASCII art).
+5. Player can guess the word until the attempts become zero, if the attempts become zero and word has not been guessed, player loses the game.
+6. If player is able to figure out the hidden word before the attempt reaches zero, player wins the game.
+7. Player can choose to play again or quit.
+
+	GOOD LUCK!
 
 ## Features
 
